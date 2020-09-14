@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+    {# ---Banner--- #}
+    {% include 'home/banner.html' %}
+
+{#     ---Clinic and Specialities---#}
+    {% include 'home/clinic_and_specialities.html' %}
+
+{#     ---Popular---#}
+    {% include 'home/popular.html' %}
+
+{#     ---Available---#}
+    {% include 'home/available_features.html' %}
+
+{% endblock content %}
+
+{% block custom_scripts %}
+    <script src="{% static 'assets/js/slick.js' %}"></script>
+{% endblock %}

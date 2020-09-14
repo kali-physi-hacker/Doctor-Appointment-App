@@ -1,0 +1,12 @@
+# Pycharm
+.idea/
+
+# Vscode
+.vscode/
+
+# Python / Django
+__pycache__
+db.sqlite3
+*.pyc
+
+#
