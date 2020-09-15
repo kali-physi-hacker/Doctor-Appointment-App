@@ -1,0 +1,44 @@
+<!-- Experience -->
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Experience</h4>
+        <div class="experience-info">
+            {% for experience in request.user.doctor.experiences_set %}
+                <div class="row form-row experience-cont">
+                    <div class="col-12 col-md-10 col-lg-11">
+                        <div class="row form-row">
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="form-group">
+                                    <label id="{{ experience_form.hospital_name.id_for_label }}">Hospital Name</label>
+                                    <input id="{{ experience_form.hospital_name.id_for_label }}" name="{{ experience_form.hospital_name.name }}" value="{{ experience.hospital_name }}" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="form-group">
+                                    <label id="{{ experience_form.from_date.id_for_label }}">From</label>
+                                    <input id="{{ experience_form.from_date.id_for_label }}" name="{{ experience_form.from_date.name }}" value="{{ experience.from_date }}" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="form-group">
+                                    <label id="{{ experience_form.to_date.id_for_label }}">To</label>
+                                    <input id="{{ experience_form.to_date.id_for_label }}" name="{{ experience_form.to_date.name }}" value="{{ experience.to_date }}" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="form-group">
+                                    <label id="{{ experience_form.designation.id_for_label }}">Designation</label>
+                                    <input id="{{ experience_form.designation.id_for_label }}" name="{{ experience_form.designation.name }}" value="{{ experience.designation }}" type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="add-more">
+            <a href="javascript:void(0);" class="add-experience"><i class="fa fa-plus-circle"></i> Add More</a>
+        </div>
+    </div>
+</div>
+<!-- /Experience -->

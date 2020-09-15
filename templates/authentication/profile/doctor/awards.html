@@ -1,0 +1,28 @@
+<!-- Awards -->
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Awards</h4>
+        <div class="awards-info">
+            {% for award in request.user.doctor.award_set.all %}
+                <div class="row form-row awards-cont">
+                    <div class="col-12 col-md-5">
+                        <div class="form-group">
+                            <label id="{{ award_form.name.id_for_label }}">Awards</label>
+                            <input id="{{ award_form.name.id_for_label }}" name="{{ award_form.name.name }}" value="{{ award.name }}" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-5">
+                        <div class="form-group">
+                            <label id="{{ award_form.year.id_for_label }}">Year</label>
+                            <input id="{{ award_form.year.id_for_label }}" name="{{ award_form.year.name }}" value="{{ award.year }}" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="add-more">
+            <a href="javascript:void(0);" class="add-award"><i class="fa fa-plus-circle"></i> Add More</a>
+        </div>
+    </div>
+</div>
+<!-- /Awards -->

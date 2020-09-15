@@ -1,0 +1,72 @@
+{% load utils %}
+{% load static %}
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Basic Information</h4>
+        <div class="row form-row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="change-avatar">
+                        <div class="profile-img">
+                            <img src="{% static 'assets/img/doctors/doctor-thumb-02.jpg' %}" alt="User Image">
+                        </div>
+                        <div class="upload-img">
+                            <div class="change-photo-btn">
+                                <span><i class="fa fa-upload"></i> Upload Photo</span>
+                                <input id="{{ doctor_form.photo.id_for_label }}" name="{{ doctor_form.photo.name }}" type="file" class="upload">
+                            </div>
+                            <small class="form-text text-muted">Allowed JPG, GIF or PNG. Max size of 2MB</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Username <span class="text-danger">*</span></label>
+                    <input value="{{ request.user.username }}" type="text" class="form-control" readonly>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Email <span class="text-danger">*</span></label>
+                    <input value="{{ request.user.username }}" type="email" class="form-control" readonly>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>First Name <span class="text-danger">*</span></label>
+                    <input value="{{ request.user.first_name }}" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Last Name <span class="text-danger">*</span></label>
+                    <input value="{{ request.user.last_name }}" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label id="{{ doctor_form.phone_number.id_for_label }}">Phone Number</label>
+                    <input id="{{ doctor_form.phone_number.id_for_label }}" name="{{ doctor_form.phone_number.name }}" value="{{ request.user.doctor.phone_number | empty_string }}" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label id="{{ doctor_form.gender.id_for_label }}">Gender</label>
+                    <select id="{{ doctor_form.gender.id_for_label }}" name="{{ doctor_form.gender.name }}" value="{{ request.user.doctor.gender }}" class="form-control select">
+                        <option>Select</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group mb-0">
+                    <label id="{{ doctor_form.date_of_birth.id_for_label }}">Date of Birth</label>
+                    <input id="{{ doctor_form.date_of_birth.id_for_label }}" name="{{ doctor_form.date_of_birth.id_for_label }}" value="{{ request.user.doctor.date_of_birth | empty_string }}" type="text" class="form-control">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

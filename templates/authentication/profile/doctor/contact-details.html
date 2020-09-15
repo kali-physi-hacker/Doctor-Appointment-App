@@ -1,0 +1,48 @@
+{% load utils %}
+
+<!-- Contact Details -->
+<div class="card contact-card">
+    <div class="card-body">
+        <h4 class="card-title">Contact Details</h4>
+        <div class="row form-row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label id="{{ doctor_form.address_line_one.id_for_label }}">Address Line 1</label>
+                    <input id="{{ doctor_form.address_line_one.id_for_label }}" name="{{ doctor_form.address_line_one.id_for_label }}" value="{{ request.user.doctor.address_line_one | empty_string }}" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label id="{{ doctor_form.address_line_two.id_for_label }}" class="control-label">Address Line 2</label>
+                    <input id="{{ doctor_form.address_line_two.id_for_label }}" name="{{ doctor_form.address_line_two.name }}" value="{{ request.user.doctor.address_line_two | empty_string }}" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label id="{{ doctor_form.city.id_for_label }}" class="control-label">City</label>
+                    <input id="{{ doctor_form.city.id_for_label }}" name="{{ doctor_form.city.name }}" value="{{ request.user.doctor.city | empty_string }}" type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label id="{{ doctor_form.state.id_for_label }}" class="control-label">State / Province</label>
+                    <input id="{{ doctor_form.state.id_for_label }}" name="{{ doctor_form.state.name }}" value="{{ request.user.doctor.state | empty_string }}" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label id="{{ doctor_form.country.id_for_label }}" class="control-label">Country</label>
+                    <input id="{{ doctor_form.country.id_for_label }}" name="{{ doctor_form.country.name }}" value="{{ request.user.doctor.country }}" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label id="{{ doctor_form.postal_code.id_for_label }}" class="control-label">Postal Code</label>
+                    <input id="{{ doctor_form.postal_code.id_for_label }}" name="{{ doctor_form.postal_code.name }}" value="{{ request.user.doctor.postal_code | empty_string }}" type="text" class="form-control">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Contact Details -->

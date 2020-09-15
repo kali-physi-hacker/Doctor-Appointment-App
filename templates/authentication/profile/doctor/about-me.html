@@ -1,0 +1,11 @@
+<!-- About Me -->
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">About Me</h4>
+        <div class="form-group mb-0">
+            <label>Biography</label>
+            <textarea id="{{ doctor_form.biography.id_for_label }}" name="{{ doctor_form.biography.name }}" class="form-control" rows="5">{{ request.user.doctor.biography }}</textarea>
+        </div>
+    </div>
+</div>
+<!-- /About Me -->

@@ -1,0 +1,38 @@
+<!-- Education -->
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Education</h4>
+        <div class="education-info">
+            <div class="row form-row education-cont">
+                <div class="col-12 col-md-10 col-lg-11">
+                    {% for education in request.user.doctor.education_set.all %}
+                        <div class="row form-row">
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="form-group">
+                                    <label id="{{ education_form.degree.id_for_label }}">Degree</label>
+                                    <input id="{{ education_form.degree.id_for_label }}" name="{{ education_form.degree.name }}" value="{{ education.degree }}" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="form-group">
+                                    <label id="{{ education_form.college.id_for_label }}">College/Institute</label>
+                                    <input id="{{ education_form.college.id_for_label }}" name="{{ education_form.college.name }}" value="{{ education.college }}" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="form-group">
+                                    <label id="{{ education_form.year_of_completion.id_for_label }}">Year of Completion</label>
+                                    <input id="{{ education_form.year_of_completion.id_for_label }}" name="{{ education_form.year_of_completion.name }}" value="{{ education.year_of_completion }}" type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="add-more">
+            <a href="javascript:void(0);" class="add-education"><i class="fa fa-plus-circle"></i> Add More</a>
+        </div>
+    </div>
+</div>
+<!-- /Education -->

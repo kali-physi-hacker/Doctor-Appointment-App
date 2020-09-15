@@ -1,0 +1,28 @@
+<!-- Registrations -->
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Registrations</h4>
+        <div class="registrations-info">
+            {% for registration in request.user.doctor.registration_set.all %}
+                <div class="row form-row reg-cont">
+                    <div class="col-12 col-md-5">
+                        <div class="form-group">
+                            <label>Registrations</label>
+                            <input value="{{ registration.name }}" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-5">
+                        <div class="form-group">
+                            <label>Year</label>
+                            <input value="{{ registration.year }}" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="add-more">
+            <a href="javascript:void(0);" class="add-reg"><i class="fa fa-plus-circle"></i> Add More</a>
+        </div>
+    </div>
+</div>
+<!-- /Registrations -->

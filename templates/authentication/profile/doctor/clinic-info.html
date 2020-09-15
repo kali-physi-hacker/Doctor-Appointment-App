@@ -1,0 +1,37 @@
+{% load utils %}
+
+<!-- Clinic Info -->
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Clinic Info</h4>
+        <div class="row form-row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label id="{{ doctor_form.clinic_name.id_for_label }}">Clinic Name</label>
+                    <input id="{{ doctor_form.clinic_name.id_for_label }}" name="{{ doctor_form.clinic_name.name }}" value="{{ request.user.doctor.clinic_name | empty_string }}" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label id="{{ doctor_form.clinic_address.id_for_label }}">Clinic Address</label>
+                    <input id="{{ doctor_form.clinic_address.id_for_label }}" name="{{ doctor_form.clinic_address.name }}" value="{{ request.user.doctor.clinic_address | empty_string }}" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label id="{{ clinic_form.image.id_for_label }}">Clinic Images</label>
+                    <form action="#" class="dropzone"></form>
+                </div>
+                <div class="upload-wrap">
+                    {% for image in request.user.doctor.clinicimages_set.all %}
+                        <div class="upload-images">
+                            <img src="{{ image.url }}" alt="Upload Image">
+                            <a href="javascript:void(0);" class="btn btn-icon btn-danger btn-sm"><i class="far fa-trash-alt"></i></a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Clinic Info -->

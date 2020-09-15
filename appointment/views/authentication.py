@@ -5,7 +5,8 @@ from django.contrib.auth import login as _login
 from django.contrib.auth import logout as _logout
 from django.conf import settings
 
-from appointment.forms.authentication import LoginForm, RegisterForm, DoctorForm
+from appointment.forms.authentication import LoginForm, RegisterForm
+from appointment.forms.profile import DoctorForm
 
 
 REGISTRATION_TYPE_DOCTOR = 'doctor'

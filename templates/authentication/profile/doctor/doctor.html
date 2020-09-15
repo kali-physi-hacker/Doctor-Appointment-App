@@ -1,0 +1,22 @@
+{% extends 'authentication/profile/base.html' %}
+
+{% block profile_content %}
+    <form action="#" method="post">
+        {% include 'authentication/profile/doctor/basic-information.html' %}
+        {% include 'authentication/profile/doctor/about-me.html' %}
+        {% include 'authentication/profile/doctor/clinic-info.html' %}
+        {% include 'authentication/profile/doctor/contact-details.html' %}
+        {% include 'authentication/profile/doctor/pricing.html' %}
+        {% include 'authentication/profile/doctor/services-and-specializations.html' %}
+        {% include 'authentication/profile/doctor/education.html' %}
+        {% include 'authentication/profile/doctor/experiences.html' %}
+        {% include 'authentication/profile/doctor/awards.html' %}
+        {% include 'authentication/profile/doctor/memberships.html' %}
+        {% include 'authentication/profile/doctor/registrations.html' %}
+
+        <div class="submit-section submit-btn-bottom">
+            <button type="submit" class="btn btn-primary submit-btn">Save Changes</button>
+        </div>
+    </form>
+
+{% endblock profile_content %}

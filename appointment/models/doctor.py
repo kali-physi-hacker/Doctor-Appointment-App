@@ -84,7 +84,7 @@ def clinic_image_file_path(instance, file_path):
     return final_file_name
 
 
-class ClinicImages(models.Model):
+class ClinicImage(models.Model):
     image = models.ImageField(upload_to=clinic_image_file_path)
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
 
@@ -114,12 +114,12 @@ class Experience(models.Model):
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
 
 
-class Memberships(models.Model):
+class Membership(models.Model):
     name = models.CharField(max_length=200)
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
 
 
-class Registrations(models.Model):
+class Registration(models.Model):
     name = models.CharField(max_length=200)
     year = models.DateField()
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)

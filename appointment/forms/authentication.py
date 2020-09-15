@@ -34,9 +34,3 @@ class RegisterForm(forms.ModelForm):
 
     def clean_email(self):
         return self.cleaned_data.get("email").lower()
-
-
-class DoctorForm(forms.ModelForm):
-    class Meta:
-        model = Doctor
-        fields = "__all__"
